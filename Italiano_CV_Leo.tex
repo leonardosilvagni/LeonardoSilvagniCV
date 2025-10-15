@@ -19,7 +19,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage[
-    pdftitle={CV di Leonardo Silvagni},
+    pdftitle={Leonardo Silvagni's CV},
     pdfauthor={Leonardo Silvagni},
     pdfcreator={LaTeX},
     colorlinks=true,
@@ -57,7 +57,7 @@
 \makeatletter
 \let\ps@customFooterStyle\ps@plain
 \patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small Leonardo Silvagni - Pagina \thepage{} di \pageref*{LastPage}}
+    \color{gray}\textit{\small Leonardo Silvagni - Page \thepage{} of \pageref*{LastPage}}
 }{}{}
 \makeatother
 \pagestyle{customFooterStyle}
@@ -126,19 +126,28 @@
 
 % --- header environment ---
 \newenvironment{header}{%
+  % pull whole header upward (adjust to taste)
   \vspace*{-0.6cm}%
+
   \color{primaryColor}\linespread{1.3}%
-  % left: photo
-  \begin{minipage}[t]{3cm}%
+  % left: photo (top‑aligned)
+  \begin{minipage}[t]{3cm}%    
+  %\vspace{-25pt}% ← key: sets baseline at the very top  
   \vspace{-15pt}
+
+    %\includegraphics[width=\linewidth,keepaspectratio]{CircularLeo.jpeg}%    
+    %\includegraphics[width=\linewidth,keepaspectratio]{OvalLeoProNoBg.jpg}%
     \includegraphics[width=\linewidth,keepaspectratio]{SquareLeoRound.jpg}%
   \end{minipage}%
+  %\hspace{0.8em}% gap
   \hspace{1cm}
-  % right: text block
+  % right: text block (top‑aligned + zero‑strut)
   \begin{minipage}[t]{\dimexpr\linewidth-3cm-0.8em\relax}%
-    \vspace{0pt}%
+    \vspace{0pt}% ← key: sets baseline at the very top
+    %\centering
 }{%
   \end{minipage}%
+  % tighten space below header
   \vspace*{-0.2cm}%
 }
 
@@ -149,7 +158,7 @@
         \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
         \LenToUnit{\paperheight-1.0 cm}
     ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Ultimo aggiornamento aprile 2025}\hspace{\widthof{Ultimo aggiornamento aprile 2025}}
+        \small\color{gray}\textit{Last updated April 2025}\hspace{\widthof{Last updated April 2025}}
     }}}%
   }%
 }
@@ -159,7 +168,6 @@
 \renewcommand{\href}[2]{%
   \hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{}{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}%
 }
-
 \begin{document}
     \newcommand{\AND}{\unskip
         \cleaders\copy\ANDbox\hskip\wd\ANDbox
@@ -190,7 +198,7 @@
 
     \section{Profilo}
     \begin{onecolentry}
-        \textbf{Punti di forza:} Elaborazione dei segnali, Apprendimento automatico, Elettronica.\\
+        \textbf{Punti di forza:} Elaborazione dei segnali, Machine Learning, Elettronica.\\
         % Ingegnere biomedico di formazione, interessato all'interfacciamento con il sistema nervoso.
         % Esperienza in manipolazione dati, analisi statistica e machine learning. Padronanza di Python, R, Matlab, C/C++; strumenti: Torch, Pandas, Numpy, Scipy, git, LaTeX; elaborazione di segnali e immagini, computer vision, dati neurali (EEG, EMG, fMRI).
     \end{onecolentry}
@@ -225,9 +233,9 @@
 
     \vspace{0.2 cm}
     \begin{twocolentry}{2024\\EPFL, Losanna, CH}
-        \href{https://github.com/fedemengo/CS-433-ML4S}{\textbf{Machine Learning: Predizione dei compiti a partire da dati fMRI}}
+        \href{https://github.com/fedemengo/CS-433-ML4S}{\textbf{Machine Learning: Predizione dei `task' a partire da dati fMRI}}
         \begin{highlights}
-            \item Sviluppo e validazione di modelli RNN per deconvolvere i time-course dei paradigmi di task da dati di neuroimmagine (fMRI) del dataset \textit{task-based} dell'Human Connectome Project.
+            \item Sviluppo e validazione di modelli RNN per deconvolvere le serie temporali dei paradigmi di task da dati di neuroimmagine (fMRI) del dataset \textit{task-based} dell'Human Connectome Project.
         \end{highlights}
     \end{twocolentry}
 
@@ -257,7 +265,7 @@
     \end{onecolentry} 
     \vspace{0.1 cm}
     \begin{onecolentry}
-      \textbf{Competenze:} Machine Learning, Elettronica, CAD, Elaborazione di segnali e immagini, FEM/COMSOL, Computer Vision, Microfabbricazione, Analisi statistica
+      \textbf{Competenze:} Machine Learning, Elettronica, CAD, Elaborazione di segnali e immagini, FEM/COMSOL, Computer Vision, Microfabbricazione, AI, Analisi statistica
     \end{onecolentry} 
 
     \section{Esperienze Professionali}
@@ -317,13 +325,13 @@
 
     \vspace{0.1 cm}
     \begin{threecolentry}
-        {2023--2024}{Fondazione Elicsir, Bologna, IT}{\textbf{\href{https://boost24.elicsir.it/}{Summer Schools}}\\
+        {2023-2024}{Fondazione Elicsir, Bologna, IT}{\textbf{\href{https://boost24.elicsir.it/}{Summer Schools}}\\
         Borse per la partecipazione a scuole estive di 10 e 4 giorni su machine learning, calcolo, cloud, bioinformatica e storia dell'informatica.}
     \end{threecolentry}
 
     \vspace{0.1cm}
     \begin{threecolentry}
-        {2021--2024}{Università di Padova, IT}{\textbf{Incentivi per lauree STEM}\\
+        {2021-2024}{Università di Padova, IT}{\textbf{Incentivi per lauree STEM}\\
         Borsa al merito.}
     \end{threecolentry}
 
